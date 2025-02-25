@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking System</title>
+</head>
+<body>
+<h1>Available Resources</h1>
+<ul>
+    <li th:each="resource : ${resources}">
+        <span th:text="${resource.name}">Resource Name</span> - <span th:text="${resource.description}">Description</span>
+        <a th:href="@{/bookings?resourceId={id}(id=${resource.id})}">View Bookings</a>
+    </li>
+</ul>
+</body>
+</html>
